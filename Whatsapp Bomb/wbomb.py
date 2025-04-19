@@ -12,6 +12,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
+import unicodedata
+import pyperclip
+import platform
+import subprocess
 
 
 driver = None  # Global variable to store the driver object
@@ -39,6 +43,14 @@ def show_banner():
         sleep(0.05)
 
     print(Fore.RESET)
+
+def copy_to_clipboard(text):
+    try:
+        pyperclip.copy(text)
+    except:
+        if platform.system() == "Linux":
+            process = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE)
+            process.communicate(input=text.encode())
 
 def send_messages():
     name = input('Enter the name of user or group: ')
@@ -75,7 +87,8 @@ def send_messages():
 
     try:
         for i in range(count):
-            msg_box.send_keys(message)
+            copy_to_clipboard(message)
+            msg_box.send_keys(Keys.CONTROL, 'v')
             msg_box.send_keys(Keys.ENTER)
             sleep(0.1)
         print("✅ Bombing Complete!!")

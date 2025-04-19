@@ -16,7 +16,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = None  # Global variable to store the driver object
 
-
 def setup_driver():
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
@@ -27,10 +26,8 @@ def setup_driver():
     driver.get('https://web.whatsapp.com/')
     return driver
 
-
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def show_banner():
     colors = [Fore.MAGENTA, Fore.WHITE, Fore.MAGENTA, Fore.MAGENTA, Fore.WHITE, Fore.MAGENTA]
@@ -43,10 +40,10 @@ def show_banner():
 
     print(Fore.RESET)
 
-
 def send_messages():
     name = input('Enter the name of user or group: ')
     message = input('Enter your message: ')
+
     try:
         count = int(input('Enter the count: '))
     except ValueError:
@@ -87,7 +84,6 @@ def send_messages():
 
     sleep(2)
 
-
 def menu():
     clear_screen()
     show_banner()
@@ -114,7 +110,6 @@ def menu():
         else:
             print("\n❌ Not a valid choice. Try again.")
             sleep(1)
-
 
 if __name__ == "__main__":
     driver = setup_driver()

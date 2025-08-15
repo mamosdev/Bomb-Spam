@@ -105,7 +105,7 @@ MIT License - Lihat LICENSE untuk detail lengkap
 💡 Catatan Developer:
 Tools ini dibuat semata untuk tujuan pembelajaran teknologi automasi. Pertimbangkan untuk menggunakan WhatsApp Business API untuk solusi resmi.
 
-<div align="center"> <sub>Dibuat dengan ❤️ oleh [Nama Anda] | © 2023</sub> </div> ```
+<div align="center"> <sub>Dibuat dengan ❤️ oleh [Mamo's Dev] | © 2023</sub> </div> ```
 Fitur README ini:
 Desain modern dengan emoji dan badges
 

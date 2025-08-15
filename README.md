@@ -41,17 +41,20 @@ Tools otomatisasi pengiriman pesan WhatsApp menggunakan Selenium WebDriver (Hany
 git clone https://github.com/username/WB0MB.git
 cd WB0MB
 
-2. Buat Virtual Environment (Disarankan)
-bash
+### 2. Buat Virtual Environment (Disarankan)
+```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
-3. Install Dependencies
-bash
+
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-4. Jalankan Program
-bash
+
+### 4. Jalankan Program
+```bash
 python wbomb.py
+
 🛠️ Cara Penggunaan
 Scan QR Code saat browser terbuka
 

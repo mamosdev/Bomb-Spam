@@ -1,128 +1,103 @@
-markdown
-# 🚀 WB0MB - WhatsApp Message Automation Tool
+# WB0MB - WhatsApp Message Bomber 🚀
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
-![Warning](https://img.shields.io/badge/%F0%9F%9A%A8-Violates_WhatsApp_TOS-red)
+WB0MB adalah skrip otomatisasi sederhana berbasis Python yang menggunakan Selenium untuk mengirim pesan berulang ke kontak atau grup di WhatsApp Web.
 
-Tools pengiriman pesan otomatis WhatsApp menggunakan Python dan Selenium (Untuk tujuan edukasi semata)
+> ⚠️ **PERINGATAN:** Gunakan alat ini secara bertanggung jawab. Penyalahgunaan terhadap orang lain bisa melanggar kebijakan WhatsApp dan hukum yang berlaku.
 
-<img src="https://img.icons8.com/color/96/000000/whatsapp.png" width="100" align="right">
+---
 
-## 📌 Daftar Isi
-1. [Peringatan Penting](#-peringatan-penting)
-2. [Fitur Utama](#-fitur-utama)
-3. [Persyaratan Sistem](#-persyaratan-sistem)
-4. [Panduan Instalasi](#-panduan-instalasi)
-5. [Cara Penggunaan](#-cara-penggunaan)
-6. [Troubleshooting](#-troubleshooting)
-7. [FAQ](#-faq)
-8. [Lisensi](#-lisensi)
+## 🛠️ Fitur
 
-## ⚠️ Peringatan Penting
-- **Dilarang keras** untuk spam/penipuan/aksi ilegal
-- WhatsApp dapat **memblokir permanen** akun Anda
-- Gunakan hanya di lingkungan testing dengan nomor dummy
-- Developer **tidak bertanggung jawab** atas penyalahgunaan
+- Mengirim pesan berulang ke kontak atau grup WhatsApp Web.
+- Otomatis menyalin dan mengirim pesan.
+- Antarmuka terminal yang berwarna dan menarik.
+- Buka halaman WhatsApp Web secara otomatis.
+- Dukungan clipboard lintas platform.
 
-## ✨ Fitur Utama
-✔️ Pengiriman pesan berulang otomatis  
-✔️ Mendukung grup dan kontak pribadi  
-✔️ Antarmuka CLI interaktif dengan warna  
-✔️ Sistem login via QR Code  
-✔️ Cross-platform support  
-✔️ Manajemen WebDriver otomatis  
+---
 
-## 💻 Persyaratan Sistem
-| Komponen | Minimal |
-|----------|---------|
-| OS | Windows 10 / Ubuntu 18.04 / macOS 10.15 |
-| Python | 3.8+ |
-| RAM | 2GB |
-| Chrome | Versi terbaru |
-| Storage | 500MB |
+## 🧩 Persyaratan
 
-## 📥 Panduan Instalasi
+Pastikan kamu sudah menginstall:
 
-### 1. Clone Repository
+- Python 3.7 atau lebih tinggi
+- Google Chrome
+- pip (Python package manager)
+
+---
+
+## 📦 Instalasi
+
+1. **Clone repo ini**
+
 ```bash
-git clone https://github.com/username/WB0MB.git && cd WB0MB
-```
-### 2. Setup Virtual Environment
-```bash
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
-```
-### 3. Install Dependencies
-```bash
+git clone https://github.com/username/wb0mb.git
+cd wb0mb
+Install dependencies
+
+bash
+Copy code
 pip install -r requirements.txt
-```
-### 4. Jalankan Aplikasi
-```bash
-python wbomb.py
-```
-🛠️ Cara Penggunaan
-Scan QR Code WhatsApp Web yang muncul
+Jika kamu tidak punya requirements.txt, kamu bisa install secara manual:
 
-Pilih menu:
+bash
+Copy code
+pip install selenium pyfiglet colorama pyperclip webdriver-manager
+Untuk pengguna Linux, kamu mungkin perlu install xclip:
 
-text
-1. Start bombing
-2. Support original creator 
-3. Exit/Quit
-Masukkan:
+bash
+Copy code
+sudo apt install xclip
+🚀 Cara Menjalankan
+Jalankan skrip:
 
-Nama kontak/grup (case sensitive)
+bash
+Copy code
+python wb0mb.py
+Browser Chrome akan terbuka dan memuat WhatsApp Web.
+
+Scan QR Code menggunakan WhatsApp-mu.
+
+Setelah login, ikuti instruksi di terminal untuk:
+
+Memasukkan nama kontak atau grup
 
 Pesan yang ingin dikirim
 
-Jumlah repetisi (angka)
+Jumlah pesan
 
-🐛 Troubleshooting
-Masalah	Solusi
-ChromeDriver error	Update Chrome ke versi terbaru
-Element not found	Pastikan nama kontak tepat sama
-QR code tidak muncul	Cek koneksi internet/firewall
-Module not found	Jalankan pip install -r requirements.txt
-❓ FAQ
-Q: Apakah aman menggunakan tools ini?
-A: Tidak sepenuhnya aman, risiko pemblokiran akun sangat tinggi.
+Nikmati "bom" pesan kamu (ingat, tetap bertanggung jawab).
 
-Q: Bisakah digunakan tanpa browser GUI?
-A: Bisa dengan menambahkan headless mode di chrome_options:
+📷 Preview
+bash
+Copy code
+$ python wb0mb.py
 
-python
-options.add_argument('--headless')
-Q: Bagaimana cara berhenti saat proses berjalan?
-A: Tekan Ctrl+C di terminal atau tutup paksa browser.
+██╗    ██╗██████╗  ██████╗ ███╗   ███╗██████╗ 
+██║    ██║██╔══██╗██╔═══██╗████╗ ████║██╔══██╗
+██║ █╗ ██║██████╔╝██║   ██║██╔████╔██║██████╔╝
+██║███╗██║██╔═══╝ ██║   ██║██║╚██╔╝██║██╔═══╝ 
+╚███╔███╔╝██║     ╚██████╔╝██║ ╚═╝ ██║██║     
+ ╚══╝╚══╝ ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     
+🤝 Dukung Developer Asli
+Skrip ini dimodifikasi dari repositori asli di:
 
-📜 Lisensi
-MIT License - Lihat LICENSE untuk detail lengkap
+👉 https://github.com/mamosdev/Bombers
 
-💡 Catatan Developer:
-Tools ini dibuat semata untuk tujuan pembelajaran teknologi automasi. Pertimbangkan untuk menggunakan WhatsApp Business API untuk solusi resmi.
+⚠️ Disclaimer
+Penggunaan alat ini sepenuhnya tanggung jawab pengguna. Developer tidak bertanggung jawab atas penyalahgunaan.
 
-<div align="center"> <sub>Dibuat dengan ❤️ oleh [Mamo's Dev] | © 2023</sub> </div> ```
-Fitur README ini:
-Desain modern dengan emoji dan badges
+📄 Lisensi
+Proyek ini berada di bawah lisensi MIT.
 
-Responsif untuk tampilan GitHub
+yaml
+Copy code
 
-Tabel troubleshooting untuk masalah umum
+---
 
-Panduan step-by-step yang jelas
+Jika kamu memiliki file bernama `wb0mb.py`, pastikan nama file tersebut sesuai dengan yang kamu cantumkan di README. Kalau ada hal yang ingin ditambahkan seperti gambar atau badge GitHub, kamu bisa modifikasi README di atas lebih lanjut.
 
-Penekanan etika berulang
+Perlu bantuan membuat `requirements.txt` juga?
 
-Struktur terorganisir dengan daftar isi
 
-Anda bisa:
-
-Tambahkan screenshot di folder /assets
-
-Buat GIF demo menggunakan ScreenToGif
-
-Tambahkan bagian "Berkontribusi" jika proyek open source
+Ask ChatGPT

@@ -2,3 +2,4 @@
 2. pip install -r requirements.txt
 3. pip install selenium pyfiglet colorama pyperclip 
 webdriver-manager
+run : pyhton wbomb.py

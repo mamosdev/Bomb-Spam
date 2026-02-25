@@ -7,11 +7,15 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver.chrome.service import Service
+# from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import unicodedata
 import pyperclip
 import platform
@@ -21,12 +25,25 @@ import subprocess
 driver = None  # Global variable to store the driver object
 
 def setup_driver():
-    options = webdriver.ChromeOptions()
+    options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    
+    # Coba download otomatis dulu
+    try:
+        service = Service(EdgeChromiumDriverManager().install())
+    except Exception as e:
+        print(f"⚠️ Gagal otomatis download EdgeDriver: {e}")
+        print("📝 Silakan download EdgeDriver manual dari:")
+        print("   https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/")
+        print("\n   Masukkan path msedgedriver.exe di bawah:")
+        edge_driver_path = input("   Path: ").strip()
+        if not edge_driver_path:
+            print("❌ Path tidak boleh kosong!")
+            return None
+        service = Service(edge_driver_path)
+    
+    driver = webdriver.Edge(service=service, options=options)
     driver.get('https://web.whatsapp.com/')
     return driver
 
